@@ -1,0 +1,59 @@
+# Common Server configuration
+# Session timeout in 10 Mins (600 seconds)
+server:
+  port: 8088
+  servlet:
+    session:
+      timeout: 6000
+      
+#logging level for JDBC Template
+logging:
+  level:
+    root: ERROR
+    org.springframework.jdbc.core.JdbcTemplate: DEBUG
+              
+#DEV the oracle configuration
+spring:
+  application: 
+    name: usman-utility-services
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: true
+  datasource: 
+      url: jdbc:oracle:thin:@10.1.13.182:1521:CEBS
+      username: usmanib
+      password: usmanib
+      driver-class-name: oracle.jdbc.OracleDriver
+      hikari: 
+        connection-timeout: 20000
+        minimum-idle: 5
+        maximum-pool-size: 12
+        idle-timeout: 300000
+        max-lifetime: 1200000
+      
+#Configure spring:kafka:cosumer/producer details
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: test-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+   
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer 
+      
+#Eureka client setup     
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://10.7.91.40:8761/eureka/
+      defaultZone: http://172.17.0.2:8761/eureka/
+      
+  instance:
+    #prefer-ip-address: true
+    preferIpAddress: true 
