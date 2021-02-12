@@ -1,0 +1,62 @@
+# Server configuration
+server:
+  port: 8093
+
+#logging level for JDBC Template
+logging:
+  level:
+    root: ERROR
+    org.springframework.jdbc.core.JdbcTemplate: DEBUG
+    #com.zaxxer.hikari: DEBUG
+        
+# Spring boot application name    
+#DEV the oracle configuration
+spring:
+  application:
+    name: bbyn-transfer-mgmt
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: true
+    
+  datasource: 
+      url: jdbc:oracle:thin:@10.1.13.251:1521:IBMBUAT
+      username: bbynib
+      password: bbynib
+      driver-class-name: oracle.jdbc.OracleDriver
+      hikari: 
+        connection-timeout: 20000
+        minimum-idle: 5
+        maximum-pool-size: 12
+        idle-timeout: 300000
+        max-lifetime: 1200000
+ 
+  ##Redis Specific Configuration
+  redis: 
+    host: 10.1.131.136
+    port: 6379
+    password: 
+    lettuce:
+      pool:
+        max-active: 7
+        max-idle: 2
+        max-wait: -1ms
+        min-idle: 2
+      shutdown-timeout: 200ms
+  cache:
+    type: redis
+    cache-names: transferCache, trAccountCache
+    redis:
+      cache-null-values: false
+      use-key-prefix: true
+      time-to-live: 3600
+      
+#Eureka client setup     
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.17.0.2:8761/eureka/
+      
+  instance:
+    preferIpAddress: true

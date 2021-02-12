@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N2:definitions name="UtilityPaymentService" targetNamespace="http://imal.ws.as.com/UtilityPaymentService" xmlns:WL5G3N0="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:WL5G3N1="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N3="http://imal.ws.as.com/UtilityPaymentService" xmlns:WL5G3N4="http://imal.ws.as.com/AdapterFault" xmlns:WL5G3N5="http://schemas.xmlsoap.org/wsdl/soap/">
+<WL5G3N0:Policy WL5G3N1:Id="wss_username_token_service_policy">
+<sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+<wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+<sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+<wsp:Policy>
+<sp:WssUsernameToken10/>
+</wsp:Policy>
+</sp:UsernameToken>
+</wsp:Policy>
+</sp:SupportingTokens>
+</WL5G3N0:Policy>
+    <WL5G3N2:types>
+        <xsd:schema xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://imal.ws.as.com/UtilityPaymentService" xmlns:WL5G3N2="http://imal.ws.as.com/AdapterFault" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://imal.ws.as.com/UtilityPaymentService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://www.e.net.kw/" schemaLocation="http://10.1.13.42:8011/UtilityPaymentService/ProxyServices/UtilityPaymentPS?SCHEMA%2FUtilityPaymentService%2FProxyServices%2FResources%2FXMLSchema_-173526054"/>
+        </xsd:schema>
+        <xsd:schema xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://imal.ws.as.com/UtilityPaymentService" xmlns:WL5G3N2="http://imal.ws.as.com/AdapterFault" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://imal.ws.as.com/UtilityPaymentService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://imal.ws.as.com/UtilityPaymentService" schemaLocation="http://10.1.13.42:8011/UtilityPaymentService/ProxyServices/UtilityPaymentPS?SCHEMA%2FUtilityPaymentService%2FProxyServices%2FResources%2FXMLSchema_-44443335"/>
+        </xsd:schema>
+        <xsd:schema xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://imal.ws.as.com/UtilityPaymentService" xmlns:WL5G3N2="http://imal.ws.as.com/AdapterFault" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://imal.ws.as.com/UtilityPaymentService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://imal.ws.as.com/AdapterFault" schemaLocation="http://10.1.13.42:8011/UtilityPaymentService/ProxyServices/UtilityPaymentPS?SCHEMA%2FUtilityPaymentService%2FProxyServices%2FResources%2FXMLSchema_84639384"/>
+        </xsd:schema>
+    </WL5G3N2:types>
+    <WL5G3N2:message name="getServiceList">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getServiceList"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getServiceListResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getServiceListResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="AdapterFault">
+        <WL5G3N2:part name="fault" element="WL5G3N4:AdapterFault"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="payMobileBillNew">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:payMobileBillNew"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="payMobileBillNewResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:payMobileBillNewResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="processMobilePayment">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:processMobilePayment"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="processMobilePaymentResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:processMobilePaymentResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validatePayment">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validatePayment"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validatePaymentResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validatePaymentResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateMobilePayment">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateMobilePayment"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateMobilePaymentResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateMobilePaymentResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getUtilityPaymentServices">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getUtilityPaymentServices"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getUtilityPaymentServicesResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getUtilityPaymentServicesResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getProductList">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getProductList"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getProductListResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getProductListResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateITunesPayment">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateITunesPayment"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateITunesPaymentResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateITunesPaymentResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateGooglePlayPayment">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateGooglePlayPayment"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateGooglePlayPaymentResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateGooglePlayPaymentResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="processITunesPayment">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:processITunesPayment"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="processITunesPaymentResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:processITunesPaymentResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="processGooglePlayPayment">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:processGooglePlayPayment"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="processGooglePlayPaymentResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:processGooglePlayPaymentResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="customUtilityPayment">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:customUtilityPayment"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="customUtilityPaymentResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:customUtilityPaymentResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="instantDeposit">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:instantDeposit"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="instantDepositResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:instantDepositResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="processUtilityPayment">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:processUtilityPayment"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="processUtilityPaymentResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:processUtilityPaymentResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validatePaymentRequest">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validatePaymentRequest"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validatePaymentRequestResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validatePaymentRequestResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:portType name="UtilityPaymentService">
+        <WL5G3N2:operation name="getServiceList">
+            <WL5G3N2:input message="WL5G3N3:getServiceList"/>
+            <WL5G3N2:output message="WL5G3N3:getServiceListResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="payMobileBillNew">
+            <WL5G3N2:input message="WL5G3N3:payMobileBillNew"/>
+            <WL5G3N2:output message="WL5G3N3:payMobileBillNewResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="processMobilePayment">
+            <WL5G3N2:input message="WL5G3N3:processMobilePayment"/>
+            <WL5G3N2:output message="WL5G3N3:processMobilePaymentResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validatePayment">
+            <WL5G3N2:input message="WL5G3N3:validatePayment"/>
+            <WL5G3N2:output message="WL5G3N3:validatePaymentResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateMobilePayment">
+            <WL5G3N2:input message="WL5G3N3:validateMobilePayment"/>
+            <WL5G3N2:output message="WL5G3N3:validateMobilePaymentResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getUtilityPaymentServices">
+            <WL5G3N2:input message="WL5G3N3:getUtilityPaymentServices"/>
+            <WL5G3N2:output message="WL5G3N3:getUtilityPaymentServicesResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getProductList">
+            <WL5G3N2:input message="WL5G3N3:getProductList"/>
+            <WL5G3N2:output message="WL5G3N3:getProductListResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateITunesPayment">
+            <WL5G3N2:input message="WL5G3N3:validateITunesPayment"/>
+            <WL5G3N2:output message="WL5G3N3:validateITunesPaymentResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateGooglePlayPayment">
+            <WL5G3N2:input message="WL5G3N3:validateGooglePlayPayment"/>
+            <WL5G3N2:output message="WL5G3N3:validateGooglePlayPaymentResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="processITunesPayment">
+            <WL5G3N2:input message="WL5G3N3:processITunesPayment"/>
+            <WL5G3N2:output message="WL5G3N3:processITunesPaymentResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="processGooglePlayPayment">
+            <WL5G3N2:input message="WL5G3N3:processGooglePlayPayment"/>
+            <WL5G3N2:output message="WL5G3N3:processGooglePlayPaymentResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="customUtilityPayment">
+            <WL5G3N2:input message="WL5G3N3:customUtilityPayment"/>
+            <WL5G3N2:output message="WL5G3N3:customUtilityPaymentResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="instantDeposit">
+            <WL5G3N2:input message="WL5G3N3:instantDeposit"/>
+            <WL5G3N2:output message="WL5G3N3:instantDepositResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="processUtilityPayment">
+            <WL5G3N2:input message="WL5G3N3:processUtilityPayment"/>
+            <WL5G3N2:output message="WL5G3N3:processUtilityPaymentResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validatePaymentRequest">
+            <WL5G3N2:input message="WL5G3N3:validatePaymentRequest"/>
+            <WL5G3N2:output message="WL5G3N3:validatePaymentRequestResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+    </WL5G3N2:portType>
+    <WL5G3N2:binding name="UtilityPaymentServicePortBinding" type="WL5G3N3:UtilityPaymentService">
+        <WL5G3N5:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<WL5G3N0:Policy>
+<WL5G3N0:PolicyReference URI="#wss_username_token_service_policy"/>
+</WL5G3N0:Policy>
+        <WL5G3N2:operation name="getServiceList">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="payMobileBillNew">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="processMobilePayment">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validatePayment">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateMobilePayment">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getUtilityPaymentServices">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getProductList">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateITunesPayment">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateGooglePlayPayment">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="processITunesPayment">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="processGooglePlayPayment">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="customUtilityPayment">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="instantDeposit">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="processUtilityPayment">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validatePaymentRequest">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+    </WL5G3N2:binding>
+    <WL5G3N2:service name="UtilityPaymentService">
+        <WL5G3N2:documentation>OSB Service</WL5G3N2:documentation>
+        <WL5G3N2:port name="UtilityPaymentServicePort" binding="WL5G3N3:UtilityPaymentServicePortBinding">
+            <WL5G3N5:address location="http://10.1.13.42:8011/UtilityPaymentService/ProxyServices/UtilityPaymentPS"/>
+        </WL5G3N2:port>
+    </WL5G3N2:service>
+</WL5G3N2:definitions>

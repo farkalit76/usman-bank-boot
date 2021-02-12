@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N2:definitions name="AccountsService" targetNamespace="http://imal.ws.as.com/AccountsService" xmlns:WL5G3N0="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:WL5G3N1="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N3="http://imal.ws.as.com/AccountsService" xmlns:WL5G3N4="http://imal.ws.as.com/AdapterFault" xmlns:WL5G3N5="http://schemas.xmlsoap.org/wsdl/soap/">
+<WL5G3N0:Policy WL5G3N1:Id="wss_username_token_service_policy">
+<sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+<wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+<sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+<wsp:Policy>
+<sp:WssUsernameToken10/>
+</wsp:Policy>
+</sp:UsernameToken>
+</wsp:Policy>
+</sp:SupportingTokens>
+</WL5G3N0:Policy>
+    <WL5G3N2:types>
+        <xsd:schema xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://imal.ws.as.com/AccountsService" xmlns:WL5G3N2="http://imal.ws.as.com/AdapterFault" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://imal.ws.as.com/AccountsService" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://imal.ws.as.com/AdapterFault" schemaLocation="http://10.1.13.42:8011/AccountsService/ProxyServices/AccountsServicePS?SCHEMA%2FAccountsService%2FProxyServices%2FResources%2FXMLSchema_-1008594941"/>
+        </xsd:schema>
+        <xsd:schema xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://imal.ws.as.com/AccountsService" xmlns:WL5G3N2="http://imal.ws.as.com/AdapterFault" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://imal.ws.as.com/AccountsService" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://imal.ws.as.com/AccountsService" schemaLocation="http://10.1.13.42:8011/AccountsService/ProxyServices/AccountsServicePS?SCHEMA%2FAccountsService%2FProxyServices%2FResources%2FXMLSchema_1489420996"/>
+        </xsd:schema>
+    </WL5G3N2:types>
+    <WL5G3N2:message name="getAccountBalance">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountBalance"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountBalanceResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountBalanceResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="AdapterFault">
+        <WL5G3N2:part name="fault" element="WL5G3N4:AdapterFault"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getCIFAccounts">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getCIFAccounts"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getCIFAccountsResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getCIFAccountsResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountIBANReq">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountIBANReq"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountIBANReqResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountIBANReqResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateIBAN">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateIBAN"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateIBANResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateIBANResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getCIFFixedDeposits">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getCIFFixedDeposits"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getCIFFixedDepositsResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getCIFFixedDepositsResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountCheques">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountCheques"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountChequesResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountChequesResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountTransctions">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountTransctions"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountTransctionsResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountTransctionsResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountInquiry">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountInquiry"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountInquiryResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountInquiryResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAvailableAccount">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAvailableAccount"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAvailableAccountResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAvailableAccountResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccntStmt">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccntStmt"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccntStmtResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccntStmtResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="accountCreation">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:accountCreation"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="accountCreationResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:accountCreationResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getCIFFromAccountNumber">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getCIFFromAccountNumber"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getCIFFromAccountNumberResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getCIFFromAccountNumberResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountHolds">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountHolds"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountHoldsResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountHoldsResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getIBAN">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getIBAN"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getIBANResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getIBANResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccDetByMobile">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccDetByMobile"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccDetByMobileResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccDetByMobileResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="Exception">
+        <WL5G3N2:part name="fault" element="WL5G3N3:Exception"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccTypes">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccTypes"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccTypesResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccTypesResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="breakDepositTRX">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:breakDepositTRX"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="breakDepositTRXResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:breakDepositTRXResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateBreakDepositTRX">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateBreakDepositTRX"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateBreakDepositTRXResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateBreakDepositTRXResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateFixedDepositTRX">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateFixedDepositTRX"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateFixedDepositTRXResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateFixedDepositTRXResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccSignature">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccSignature"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccSignatureResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccSignatureResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getCCEligibleSalaryAccounts">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getCCEligibleSalaryAccounts"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getCCEligibleSalaryAccountsResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getCCEligibleSalaryAccountsResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateIBANByCivilID">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateIBANByCivilID"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="validateIBANByCivilIDResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:validateIBANByCivilIDResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountAlerts">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountAlerts"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="getAccountAlertsResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:getAccountAlertsResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="activateDormantAccount">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:activateDormantAccount"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="activateDormantAccountResponse">
+        <WL5G3N2:part name="parameters" element="WL5G3N3:activateDormantAccountResponse"/>
+    </WL5G3N2:message>
+    <WL5G3N2:portType name="AccountsService">
+        <WL5G3N2:operation name="getAccountBalance">
+            <WL5G3N2:input message="WL5G3N3:getAccountBalance"/>
+            <WL5G3N2:output message="WL5G3N3:getAccountBalanceResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getCIFAccounts">
+            <WL5G3N2:input message="WL5G3N3:getCIFAccounts"/>
+            <WL5G3N2:output message="WL5G3N3:getCIFAccountsResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountIBANReq">
+            <WL5G3N2:input message="WL5G3N3:getAccountIBANReq"/>
+            <WL5G3N2:output message="WL5G3N3:getAccountIBANReqResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateIBAN">
+            <WL5G3N2:input message="WL5G3N3:validateIBAN"/>
+            <WL5G3N2:output message="WL5G3N3:validateIBANResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getCIFFixedDeposits">
+            <WL5G3N2:input message="WL5G3N3:getCIFFixedDeposits"/>
+            <WL5G3N2:output message="WL5G3N3:getCIFFixedDepositsResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountCheques">
+            <WL5G3N2:input message="WL5G3N3:getAccountCheques"/>
+            <WL5G3N2:output message="WL5G3N3:getAccountChequesResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountTransctions">
+            <WL5G3N2:input message="WL5G3N3:getAccountTransctions"/>
+            <WL5G3N2:output message="WL5G3N3:getAccountTransctionsResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountInquiry">
+            <WL5G3N2:input message="WL5G3N3:getAccountInquiry"/>
+            <WL5G3N2:output message="WL5G3N3:getAccountInquiryResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAvailableAccount">
+            <WL5G3N2:input message="WL5G3N3:getAvailableAccount"/>
+            <WL5G3N2:output message="WL5G3N3:getAvailableAccountResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccntStmt">
+            <WL5G3N2:input message="WL5G3N3:getAccntStmt"/>
+            <WL5G3N2:output message="WL5G3N3:getAccntStmtResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="accountCreation">
+            <WL5G3N2:input message="WL5G3N3:accountCreation"/>
+            <WL5G3N2:output message="WL5G3N3:accountCreationResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getCIFFromAccountNumber">
+            <WL5G3N2:input message="WL5G3N3:getCIFFromAccountNumber"/>
+            <WL5G3N2:output message="WL5G3N3:getCIFFromAccountNumberResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountHolds">
+            <WL5G3N2:input message="WL5G3N3:getAccountHolds"/>
+            <WL5G3N2:output message="WL5G3N3:getAccountHoldsResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getIBAN">
+            <WL5G3N2:input message="WL5G3N3:getIBAN"/>
+            <WL5G3N2:output message="WL5G3N3:getIBANResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccDetByMobile">
+            <WL5G3N2:input message="WL5G3N3:getAccDetByMobile"/>
+            <WL5G3N2:output message="WL5G3N3:getAccDetByMobileResponse"/>
+            <WL5G3N2:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccTypes">
+            <WL5G3N2:input message="WL5G3N3:getAccTypes"/>
+            <WL5G3N2:output message="WL5G3N3:getAccTypesResponse"/>
+            <WL5G3N2:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="breakDepositTRX">
+            <WL5G3N2:input message="WL5G3N3:breakDepositTRX"/>
+            <WL5G3N2:output message="WL5G3N3:breakDepositTRXResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateBreakDepositTRX">
+            <WL5G3N2:input message="WL5G3N3:validateBreakDepositTRX"/>
+            <WL5G3N2:output message="WL5G3N3:validateBreakDepositTRXResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateFixedDepositTRX">
+            <WL5G3N2:input message="WL5G3N3:validateFixedDepositTRX"/>
+            <WL5G3N2:output message="WL5G3N3:validateFixedDepositTRXResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccSignature">
+            <WL5G3N2:input message="WL5G3N3:getAccSignature"/>
+            <WL5G3N2:output message="WL5G3N3:getAccSignatureResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getCCEligibleSalaryAccounts">
+            <WL5G3N2:input message="WL5G3N3:getCCEligibleSalaryAccounts"/>
+            <WL5G3N2:output message="WL5G3N3:getCCEligibleSalaryAccountsResponse"/>
+            <WL5G3N2:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateIBANByCivilID">
+            <WL5G3N2:input message="WL5G3N3:validateIBANByCivilID"/>
+            <WL5G3N2:output message="WL5G3N3:validateIBANByCivilIDResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountAlerts">
+            <WL5G3N2:input message="WL5G3N3:getAccountAlerts"/>
+            <WL5G3N2:output message="WL5G3N3:getAccountAlertsResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="activateDormantAccount">
+            <WL5G3N2:input message="WL5G3N3:activateDormantAccount"/>
+            <WL5G3N2:output message="WL5G3N3:activateDormantAccountResponse"/>
+            <WL5G3N2:fault name="AdapterFault" message="WL5G3N3:AdapterFault"/>
+        </WL5G3N2:operation>
+    </WL5G3N2:portType>
+    <WL5G3N2:binding name="AccountsServicePortBinding" type="WL5G3N3:AccountsService">
+        <WL5G3N5:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<WL5G3N0:Policy>
+<WL5G3N0:PolicyReference URI="#wss_username_token_service_policy"/>
+</WL5G3N0:Policy>
+        <WL5G3N2:operation name="getAccountBalance">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getCIFAccounts">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountIBANReq">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateIBAN">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getCIFFixedDeposits">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountCheques">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountTransctions">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountInquiry">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAvailableAccount">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccntStmt">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="accountCreation">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getCIFFromAccountNumber">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountHolds">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getIBAN">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccDetByMobile">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="Exception">
+                <WL5G3N5:fault name="Exception" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccTypes">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="Exception">
+                <WL5G3N5:fault name="Exception" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="breakDepositTRX">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateBreakDepositTRX">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateFixedDepositTRX">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccSignature">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getCCEligibleSalaryAccounts">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="Exception">
+                <WL5G3N5:fault name="Exception" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="validateIBANByCivilID">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="getAccountAlerts">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="activateDormantAccount">
+            <WL5G3N5:operation/>
+            <WL5G3N2:input>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:input>
+            <WL5G3N2:output>
+                <WL5G3N5:body use="literal"/>
+            </WL5G3N2:output>
+            <WL5G3N2:fault name="AdapterFault">
+                <WL5G3N5:fault name="AdapterFault" use="literal"/>
+            </WL5G3N2:fault>
+        </WL5G3N2:operation>
+    </WL5G3N2:binding>
+    <WL5G3N2:service name="AccountsService">
+        <WL5G3N2:documentation>OSB Service</WL5G3N2:documentation>
+        <WL5G3N2:port name="AccountsServicePort" binding="WL5G3N3:AccountsServicePortBinding">
+            <WL5G3N5:address location="http://10.1.13.42:8011/AccountsService/ProxyServices/AccountsServicePS"/>
+        </WL5G3N2:port>
+    </WL5G3N2:service>
+</WL5G3N2:definitions>
