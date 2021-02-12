@@ -1,0 +1,53 @@
+#Server configuration
+server:
+  address: 10.7.91.40
+  #address: 172.17.0.2  port: 8761
+
+#Name of the application
+#DEV the oracle configuration
+spring:
+  application:
+    name: usman-channel-mgmt
+      
+
+#Eureka server configuration
+#This is a eureka server so no need to register-with-eureka
+#This is a eureka server no need to fetch-registry
+#Server wait time 1 minute =60 * 1000 Millis
+eureka:  client:    register-with-eureka: false
+    fetch-registry: false
+    service-url:      defaultZone: http://10.7.91.40:8761/eureka
+  server:    wait-time-in-ms-when-sync-empty: 60000
+    enable-self-preservation: false
+
+
+#All url come with prefix/api will interpret
+zuul:
+  host:    connect-timeout-millis: 60000
+      prefix: /USMANMS
+  #exclude Authorization from sensitive headers
+  sensitiveHeaders: Cookie,Set-Cookie
+  ignoredServices: '*'
+  routes:    
+    customer-mgmt:
+      path: /rs1/**
+      url: http://10.7.91.40:8091/
+      
+    account-mgmt:
+      path: /rs2/**
+      url: http://10.1.131.136:8092/
+    
+    transfer-mgmt:
+      path: /rs3/**
+      url: http://10.1.131.136:8093/
+      
+    payment-mgmt:
+      path: /rs4/**
+      url: http://10.1.131.136:8094/
+        
+    utility-services:
+      path: /rs/**
+      url: http://10.7.91.40:8088/
+       
+    
+      
