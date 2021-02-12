@@ -1,0 +1,29 @@
+body {
+	background-color: white;
+}
+
+.header {
+	background-color: lightblue;
+}
+
+.main {
+	width: 100%;
+}
+
+.table{
+	width: 65%;
+	max-width: 65%;
+}
+
+.table-width{
+	width: auto;
+	max-width: 100%;
+}
+
+
+.table .thead-dark th {
+  color: #fff;
+  background-color: #620000;
+  border-color: #FF8888;
+  border-bottom: 0px;
+}
