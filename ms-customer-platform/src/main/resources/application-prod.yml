@@ -1,0 +1,47 @@
+# Server configuration
+server:  port: 8091
+
+
+#logging level for JDBC Template
+logging:
+  level:
+    root: ERROR
+    org.springframework.jdbc.core.JdbcTemplate: DEBUG
+       
+      
+# Spring boot application name    
+#DEV the oracle configuration
+spring: 
+  application: 
+    name: bbyn-customer-mgmt  jpa:       hibernate:      ddl-auto: none
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: true
+    
+  datasource: 
+      url: jdbc:oracle:thin:@10.1.13.182:1521:CEBS
+      username: bbynib
+      password: bbynib
+      driver-class-name: oracle.jdbc.OracleDriver
+      hikari: 
+        connection-timeout: 20000
+        minimum-idle: 5
+        maximum-pool-size: 12
+        idle-timeout: 300000
+        max-lifetime: 1200000
+      
+      
+#Eureka client setup     
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.7.91.40:8761/eureka/
+      
+  instance:
+    preferIpAddress: true
+    #hostname: localhost        
+       
+## define the services URI
+#services: 
+  #utilities: 
+    #url: http://10.7.91.40:8088/utility-service/
+    #url: http://bbyn-utility-services/utility-service/
